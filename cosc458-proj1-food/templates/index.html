@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+        <link rel="stylesheet" href="/static/theme.css">
+         
+        <title>
+            Love | Sweet Potato
+        </title>   
+        <style>
+            body {
+                font-family: 'Ubuntu';font-size: 22px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container recipe">
+            <table>
+                <tr>
+                    <td>
+                        <h1><a href="{{recipe_data.link}}">{{recipe_data.title}}</a></h1>
+                        <h2>Servings: {{recipe_data.servings}}</h2>
+                        <img class="recipe-img" src={{recipe_data.image}} />
+                    </td>
+                    <td>
+                        <h2>Ingredients </h2>
+                        <div class="ingredients"> 
+                            
+                            {%for i in range(0, len)%} 
+                                <p>{{recipe_data.ingredients[i]}}</p>
+                            {%endfor%} 
+                        </div>
+                    </td>
+                </tr>
+            </table>
+             
+        </div>
+        <table class="container tweet">
+            <tr>
+                <td>
+                    <img class="twitter-logo" src="https://cdn2.iconfinder.com/data/icons/minimalism/512/twitter.png"/>
+                </td>
+                <td>
+                    {% if twitter_data %}
+                            <p> {{twitter_data.tweet}} </p>
+                    {%endif%}
+                    
+                </td>
+            </tr>
+        </table>
+
+    </body>
+</html>
